@@ -35,16 +35,24 @@ class App extends Component {
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
     ]
+    this.cities =  ["Goa(India)", "Amsterdam(Netherlands)", "New York(USA)", "Darjeeling(India)", "Tokyo(Japan)", "Lonavala(India)"];
   }
 
   render() {
     return (
       <div id="main">
         {/* Do not remove the main div */}
+        <ol>
+          {this.cities.map((element,index) => {
+            if (element.includes("India")) {
+              return (
+                <li key={`location${index + 1}`}>{element.split("(India)")}</li>
+              )
+            }
+          })}
+        </ol>
       </div>
     )
   }
 }
-
-
 export default App;
